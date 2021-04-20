@@ -7,12 +7,19 @@
 
 import UIKit
 
+public protocol coreDataUpdateDelegate: class {
+    func updateCoreDataQuant(index: Int, quantity: Int)
+}
+
 class ProductCell: UITableViewCell {
 
+    var delegate: coreDataUpdateDelegate?
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     
     var product: ProductData!
+    var index: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,18 +34,22 @@ class ProductCell: UITableViewCell {
     }
     
     
-    func initCell(product: ProductData) {
+    func initCell(product: ProductData, index: Int) {
         self.product = product
+        self.index = index
         updateCell()
     }
+
     
     func updateCell() {
         nameLabel.text = product.productName
         quantityLabel.text = String(product.productQuant)
+        self.delegate?.updateCoreDataQuant(index: index, quantity: product.productQuant)
     }
     
     @IBAction func PlusButtonAction(_ sender: Any) {
         product.productQuant += 1
+//        self.delegate?.updateCoreDataQuant(index: index, quantity: product.productQuant)
         updateCell()
     }
     

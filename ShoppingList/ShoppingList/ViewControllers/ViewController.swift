@@ -8,12 +8,15 @@
 import UIKit
 import CoreData
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var clearListButton: UIBarButtonItem!
     
+    var appDelegate: AppDelegate!
+    var managedContext: NSManagedObjectContext!
     var shoppingList = [ProductData]()
 
     var productCoreData: [NSManagedObject] = []
@@ -24,11 +27,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+        
+        
+        
+        appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        managedContext = appDelegate.persistentContainer.viewContext
+
+        fetchCoreData()
     }
 
     
     @objc func clearList() {
         shoppingList = []
+        clearCoreData()
         tableView.reloadData()
     }
     
@@ -54,6 +65,7 @@ class ViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
             self?.tableView.reloadData()
             print("Shopping List Cleared")
+            self?.clearList()
         }))
         present(ac, animated: true, completion: nil)
     }

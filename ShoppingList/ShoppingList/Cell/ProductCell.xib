@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,34 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDE-V2-Xfg">
-                        <rect key="frame" x="10" y="0.0" width="127" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="LDE-V2-Xfg">
+                        <rect key="frame" x="10" y="0.0" width="194" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="oje-Z5-IME"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact">
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rl-yT-jbX">
-                        <rect key="frame" x="212" y="0.0" width="57.5" height="60"/>
+                        <rect key="frame" x="204" y="0.0" width="57.5" height="60"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phn-eG-NCa" userLabel="spacer1">
-                        <rect key="frame" x="137" y="0.0" width="75" height="60"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-Ir-WYI" userLabel="PlusButton">
-                        <rect key="frame" x="269.5" y="3" width="28" height="22"/>
+                        <rect key="frame" x="261.5" y="3" width="28" height="22"/>
                         <state key="normal" image="plus" catalog="system"/>
                         <connections>
                             <action selector="PlusButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4TL-Zt-1Qq"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9U-5X-UX1" userLabel="MinusButton">
-                        <rect key="frame" x="269.5" y="35" width="28" height="22"/>
+                        <rect key="frame" x="261.5" y="35" width="28" height="22"/>
                         <state key="normal" image="minus" catalog="system"/>
                         <connections>
                             <action selector="MinusButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6pV-CL-GsH"/>
@@ -52,26 +50,22 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Phn-eG-NCa" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.234375" id="1dy-mB-zqy"/>
                     <constraint firstItem="2rl-yT-jbX" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.18" id="2HL-NT-Z4f"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e9U-5X-UX1" secondAttribute="trailing" constant="5" id="3if-p3-2NG"/>
                     <constraint firstItem="e9U-5X-UX1" firstAttribute="leading" secondItem="2rl-yT-jbX" secondAttribute="trailing" id="A8H-mx-0tj"/>
-                    <constraint firstItem="Phn-eG-NCa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HAF-sj-UWK"/>
-                    <constraint firstItem="LDE-V2-Xfg" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.396875" id="JGE-qV-DTq"/>
                     <constraint firstItem="e9U-5X-UX1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.0875" id="NZh-gB-O43"/>
                     <constraint firstItem="LDE-V2-Xfg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RM4-fc-4yL"/>
-                    <constraint firstItem="2rl-yT-jbX" firstAttribute="leading" secondItem="Phn-eG-NCa" secondAttribute="trailing" id="Szd-5Y-bXH"/>
                     <constraint firstAttribute="bottom" secondItem="2rl-yT-jbX" secondAttribute="bottom" id="WTd-9o-v3Z"/>
+                    <constraint firstItem="2rl-yT-jbX" firstAttribute="leading" secondItem="LDE-V2-Xfg" secondAttribute="trailing" id="Xoy-TL-YgP"/>
                     <constraint firstItem="c0s-Ir-WYI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="eA9-32-2kX"/>
-                    <constraint firstItem="Phn-eG-NCa" firstAttribute="leading" secondItem="LDE-V2-Xfg" secondAttribute="trailing" id="htr-xC-1en"/>
                     <constraint firstAttribute="bottom" secondItem="LDE-V2-Xfg" secondAttribute="bottom" id="kOL-fj-4ia"/>
                     <constraint firstItem="LDE-V2-Xfg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kSP-Z3-3u6"/>
                     <constraint firstItem="2rl-yT-jbX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kfM-YW-qgt"/>
                     <constraint firstItem="c0s-Ir-WYI" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.0875" id="nYg-va-Llx"/>
+                    <constraint firstItem="LDE-V2-Xfg" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.60625" id="nzb-b8-fLB"/>
                     <constraint firstAttribute="bottom" secondItem="e9U-5X-UX1" secondAttribute="bottom" constant="3" id="pMG-kC-FIC"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c0s-Ir-WYI" secondAttribute="trailing" constant="5" id="r9b-EL-kEs"/>
                     <constraint firstItem="c0s-Ir-WYI" firstAttribute="leading" secondItem="2rl-yT-jbX" secondAttribute="trailing" id="rrb-Jg-7wc"/>
-                    <constraint firstAttribute="bottom" secondItem="Phn-eG-NCa" secondAttribute="bottom" id="y2W-ZK-aU8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -85,8 +79,5 @@
     <resources>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
